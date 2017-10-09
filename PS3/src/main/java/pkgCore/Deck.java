@@ -9,7 +9,7 @@ import pkgException.DeckException;
 
 public class Deck {
 
-	private ArrayList<Card> cardsInDeck;
+	private ArrayList<Card> cardsInDeck = new ArrayList<Card>();
 
 	public Deck() {
 		for (eSuit eSuit : eSuit.values()) {
@@ -20,7 +20,6 @@ public class Deck {
 		Collections.shuffle(cardsInDeck);
 	}
 
-	//Fixed Draw method so it throws an exception if the deck is empty
 	
 	public Card Draw() throws DeckException {
 		
@@ -31,7 +30,6 @@ public class Deck {
 		return cardsInDeck.remove(0);
 	}
 	
-	//overloaded Draw method to Draw a card of a given eSuit
 	
 	public Card Draw(eSuit eSuit) {
 		for (Card c : this.cardsInDeck) {
@@ -44,7 +42,6 @@ public class Deck {
 		return null;
 	}
 	
-	//overloaded Draw method to Draw a card of a given eRank
 	
 	public Card Draw(eRank eRank) {
 		for (Card c : this.cardsInDeck) {
@@ -57,7 +54,6 @@ public class Deck {
 		return null;
 	}
 
-	//method that will return the number of a given eSuit left in the deck.
 	
 	public int DeckSuitCount(eSuit eSuit) {
 		int suitcount = 0;
@@ -69,7 +65,6 @@ public class Deck {
 		return suitcount;
 	}
 	
-	//method that will return the number of a given eRank left in the deck.
 	
 	public int DeckRankCount(eRank eRank) {
 		int rankcount = 0;
@@ -81,7 +76,6 @@ public class Deck {
 		return rankcount;
 	}
 	
-	//method that will return 0 or 1 if a given card is left in the deck.
 	
 	public int FindCard(Card c) {
 		for (Card crds: cardsInDeck) {

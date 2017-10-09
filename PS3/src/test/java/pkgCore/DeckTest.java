@@ -10,10 +10,10 @@ import pkgException.DeckException;
 
 public class DeckTest {
 
-	@Test
+	@Test (expected = DeckException.class)
 	public void TestEmptyDeck() throws DeckException {
 		Deck d1 = new Deck();
-		for (int i = 0;i == 53; i++) {
+		for (int i = 0;i < 54; i++) {
 			d1.Draw();
 		}
 	}
